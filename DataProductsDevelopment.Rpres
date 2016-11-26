@@ -1,28 +1,65 @@
-DataProductsDevelopment
+Course Project: Shiny Application and Reproducible Pitch
 ========================================================
-author: 
-date: 
+author: Ramiro Asturias
+date: November 21, 2016
 autosize: true
 
-First Slide
+Project Description and Objectives
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+        This is the Deck for the Course Project of the “Developing Data products” course.
+        The project consists in two activities:
+        - Create a Shiny application 
+                <https://rasturias.shinyapps.io/ShinyApplication/>
+        - Create a presentation in Slidify or Rstudio Presenter to pitch for the application.
+        - Complete project source code at GitHub 
+                <https://github.com/rasturias/shinyApp>
+        
+        The Objective is to generate a Shiny APP and use R on to generate the outputs.
+        
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-Slide With Code
+Shiny Application Developed
 ========================================================
+
+Based on diamond data set from the UsingR package. 
+The data is diamond prices USD dollars and diamond weight in carats. 
+Carats are a standard measure of diamond mass, 0.2 grams. 
+We will predict the price for the diamond based on the Carat Mass
+
+Information about the dataset:
 
 ```{r}
-summary(cars)
+library(UsingR)
+summary(diamond)
 ```
 
-Slide With Plot
+Diamond Model Created
 ========================================================
 
+- I used lm to fit a linear model based on diamond dataset.
+- With this linear model, we can predict a diamond's price based on the carats.
+- This is a graphic representation of the dataset.
+
 ```{r, echo=FALSE}
-plot(cars)
+
+library(shiny)
+library(UsingR)
+library(ggplot2)
+
+ data(diamond)
+    g = ggplot(diamond, aes(x = carat, y = price*0.7))
+    g = g + xlab("Mass (carats)")
+    g = g + ylab("Price (USD $)")
+    g = g + geom_point(size = 3, colour = "black", alpha=0.5)
+    g = g + geom_point(size = 5, colour = "blue", alpha=0.2)
+    g = g + geom_smooth(method = "lm", colour = "black")
+    g          
+
 ```
+
+Diamond Price Calculator Shiny Application
+========================================================
+
+- The application can be found in https://rasturias.shinyapps.io/ShinyApplication
+

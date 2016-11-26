@@ -1,37 +1,61 @@
-DataProductsDevelopment
+Course Project: Shiny Application and Reproducible Pitch
 ========================================================
-author: 
-date: 
+author: Ramiro Asturias
+date: November 21, 2016
 autosize: true
 
-First Slide
+Project Description and Objectives
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+        This is the Deck for the Course Project of the “Developing Data products” course.
+        The project consists in two activities:
+        - Create a Shiny application 
+                <https://rasturias.shinyapps.io/ShinyApplication/>
+        - Create a presentation in Slidify or Rstudio Presenter to pitch for the application.
+        - Complete project source code at GitHub 
+                <https://github.com/rasturias/shinyApp>
+        
+        The Objective is to generate a Shiny APP and use R on to generate the outputs.
+        
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
 
-Slide With Code
+Shiny Application Developed
 ========================================================
+
+Based on diamond data set from the UsingR package. 
+The data is diamond prices USD dollars and diamond weight in carats. 
+Carats are a standard measure of diamond mass, 0.2 grams. 
+We will predict the price for the diamond based on the Carat Mass
+
+Information about the dataset:
 
 
 ```r
-summary(cars)
+library(UsingR)
+summary(diamond)
 ```
 
 ```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
+     carat            price       
+ Min.   :0.1200   Min.   : 223.0  
+ 1st Qu.:0.1600   1st Qu.: 337.5  
+ Median :0.1800   Median : 428.5  
+ Mean   :0.2042   Mean   : 500.1  
+ 3rd Qu.:0.2500   3rd Qu.: 657.0  
+ Max.   :0.3500   Max.   :1086.0  
 ```
 
-Slide With Plot
+Diamond Model Created
 ========================================================
 
+- I used lm to fit a linear model based on diamond dataset.
+- With this linear model, we can predict a diamond's price based on the carats.
+- This is a graphic representation of the dataset.
+
 ![plot of chunk unnamed-chunk-2](DataProductsDevelopment-figure/unnamed-chunk-2-1.png)
+
+Diamond Price Calculator Shiny Application
+========================================================
+
+- The application can be found in https://rasturias.shinyapps.io/ShinyApplication
+

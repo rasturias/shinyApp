@@ -1,0 +1,10 @@
+name: ShinyApplication
+title: ShinyApplication
+account: rasturias
+server: shinyapps.io
+appId: 140294
+bundleId: 626216
+url: https://rasturias.shinyapps.io/ShinyApplication/
+when: 1480195200.70654
+asMultiple: FALSE
+asStatic: FALSE
